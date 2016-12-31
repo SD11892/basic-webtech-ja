@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build-html": "GITBOOK_DIR=. gitbook build source html",
+    "gitbook": "GITBOOK_DIR=. gitbook"
+  },
+  "dependencies": {
+    "gitbook": "^3.2.2",
+    "gitbook-cli": "^2.3.0"
+  }
+}
