@@ -1,17 +1,6 @@
-# 環境構築
+# ES2015とは
 
-## Web環境
-
-いずれかのサイトを使う
-
-- https://codepen.io
-- https://jsbin.com
-- https://jsfiddle.net
-
-## ローカル環境
-
-Node.js v6をインストールする
-
-- https://nodejs.org/en/download/
-
-http://node.green によるとv6.9.2は99%のES2015を実装している
+- 長年使われてきたES5に続くJavaScriptの新しい仕様
+- リリースサイクルが変更され毎年更新される
+- ES2016, ES2017もある
+- https://github.com/tc39/ecma262
