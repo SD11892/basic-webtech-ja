@@ -9,8 +9,7 @@
 * [Lesson 06: destructuring object/array](lesson-06.md)
 * [Lesson 07: template literal](lesson-07.md)
 
-TODOs
 
-* [Lesson 08: array rest/spread](lesson-08.md)
-* [Lesson 09: arguments default/rest/spread](lesson-09.md)
-* [Lesson 10: array prototypes](lesson-10.md)
+* TODO: array rest/spread
+* TODO: arguments default/rest/spread
+* TODO: array prototypes
