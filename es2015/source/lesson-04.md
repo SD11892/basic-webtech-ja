@@ -25,10 +25,19 @@ const f = () => {
 アロー関数の場合は、`this`はアロー関数の外側の`this`と同じになります。
 
 ```
-const f = function() {
+const f1 = function() {
   this.counter = 0;
-  const g = () => { this.count += 1; };
-  g();
+  const g = function() { this.counter = 1; };
+  const obj = { func: g };
+  obj.func();
+  console.log(this.counter);
+};
+
+const f2 = function() {
+  this.counter = 0;
+  const g = () => { this.counter = 1; };
+  const obj = { func: g };
+  obj.func();
   console.log(this.counter);
 };
 ```
