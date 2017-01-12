@@ -298,10 +298,19 @@
 <h2 id="this&#x306E;&#x6271;&#x3044;">this&#x306E;&#x6271;&#x3044;</h2>
 <p>&#x901A;&#x5E38;&#x306E;<code>function</code>&#x3067;&#x306F;<code>this</code>&#x306F;&#x95A2;&#x6570;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x30B3;&#x30F3;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;
 &#x30A2;&#x30ED;&#x30FC;&#x95A2;&#x6570;&#x306E;&#x5834;&#x5408;&#x306F;&#x3001;<code>this</code>&#x306F;&#x30A2;&#x30ED;&#x30FC;&#x95A2;&#x6570;&#x306E;&#x5916;&#x5074;&#x306E;<code>this</code>&#x3068;&#x540C;&#x3058;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<pre><code>const f = function() {
+<pre><code>const f1 = function() {
   this.counter = 0;
-  const g = () =&gt; { this.count += 1; };
-  g();
+  const g = function() { this.counter = 1; };
+  const obj = { func: g };
+  obj.func();
+  console.log(this.counter);
+};
+
+const f2 = function() {
+  this.counter = 0;
+  const g = () =&gt; { this.counter = 1; };
+  const obj = { func: g };
+  obj.func();
   console.log(this.counter);
 };
 </code></pre><h2 id="&#x7701;&#x7565;&#x8A18;&#x6CD5;">&#x7701;&#x7565;&#x8A18;&#x6CD5;</h2>
@@ -369,7 +378,7 @@ const f2 = x =&gt; { console.log(x); };
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lesson 04: arrow function","level":"1.5","depth":1,"next":{"title":"Lesson 05: object shorthand","level":"1.6","depth":1,"path":"lesson-05.md","ref":"lesson-05.md","articles":[]},"previous":{"title":"Lesson 03: constとlet","level":"1.4","depth":1,"path":"lesson-03.md","ref":"lesson-03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-04.md","mtime":"2017-01-06T08:04:31.217Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T23:17:12.359Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lesson 04: arrow function","level":"1.5","depth":1,"next":{"title":"Lesson 05: object shorthand","level":"1.6","depth":1,"path":"lesson-05.md","ref":"lesson-05.md","articles":[]},"previous":{"title":"Lesson 03: constとlet","level":"1.4","depth":1,"path":"lesson-03.md","ref":"lesson-03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-04.md","mtime":"2017-01-11T15:29:43.388Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-12T13:36:15.142Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
