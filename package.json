@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "gitbook": "GITBOOK_DIR=. gitbook",
-    "build-es2015": "GITBOOK_DIR=. gitbook build es2015/source es2015/html"
+    "build-es2015": "GITBOOK_DIR=. gitbook build es2015/source es2015/html",
+    "build-eslint": "GITBOOK_DIR=. gitbook build eslint/source eslint/html",
+    "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
     "gitbook": "^3.2.2",
