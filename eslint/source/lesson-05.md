@@ -12,6 +12,7 @@ eslintはnpm scriptで起動できますが、エディタ連携をするとよ�
   - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 - vim 
   - https://github.com/neomake/neomake
+  - https://github.com/benjie/neomake-local-eslint.vim
 
 ## 課題
 
