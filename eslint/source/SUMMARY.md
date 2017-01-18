@@ -7,3 +7,4 @@
 * [Lesson 04: 基本設定](lesson-04.md)
 * [Lesson 05: エディタ連携](lesson-05.md)
 * [Lesson 06: プリセット設定](lesson-06.md)
+* [Lesson 07: おまけ](lesson-07.md)
