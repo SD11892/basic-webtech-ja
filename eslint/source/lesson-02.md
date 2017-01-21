@@ -2,10 +2,10 @@
 
 ## ローカル環境
 
-Node.js v6をインストールする
+Node.js v6をインストールします。
 
 - https://nodejs.org/en/download/
 
-補足
+### 補足
 
 - v4でも動くはずです
