@@ -3,6 +3,7 @@
   "scripts": {
     "build-es2015": "GITBOOK_DIR=. gitbook build es2015/source es2015/html",
     "build-eslint": "GITBOOK_DIR=. gitbook build eslint/source eslint/html",
+    "build-nodejs": "GITBOOK_DIR=. gitbook build nodejs/source nodejs/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
