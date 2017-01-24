@@ -1,0 +1,401 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lesson 06: CLIスクリプトを作る · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="lesson-05.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lesson-01.html">
+            
+                <a href="lesson-01.html">
+            
+                    
+                    Lesson 01: Node.jsとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="lesson-02.html">
+            
+                <a href="lesson-02.html">
+            
+                    
+                    Lesson 02: 環境構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="lesson-03.html">
+            
+                <a href="lesson-03.html">
+            
+                    
+                    Lesson 03: REPLを使う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="lesson-04.html">
+            
+                <a href="lesson-04.html">
+            
+                    
+                    Lesson 04: REPLでコーディング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="lesson-05.html">
+            
+                <a href="lesson-05.html">
+            
+                    
+                    Lesson 05: REPL便利機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="lesson-06.html">
+            
+                <a href="lesson-06.html">
+            
+                    
+                    Lesson 06: CLIスクリプトを作る
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    TODO: pure http client
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    TODO: pure http server
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    TODO: event emitter
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    TODO: fs module
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    TODO: child processes
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Lesson 06: CLIスクリプトを作る</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cli&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3092;&#x4F5C;&#x308B;">CLI&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3092;&#x4F5C;&#x308B;</h1>
+<p>CLI&#x30C4;&#x30FC;&#x30EB;&#x3092;&#x4F5C;&#x308B;&#x3053;&#x3068;&#x306F;&#x6BD4;&#x8F03;&#x7684;&#x7C21;&#x5358;&#x3067;&#x3059;&#x3002;</p>
+<p>CLI&#x3067;&#x52D5;&#x304F;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306B;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;shebang&#x3092;&#x3064;&#x3051;&#x307E;&#x3059;&#x3002;&#x4E00;&#x822C;&#x7684;&#x306B;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x304C;&#x591A;&#x3044;&#x3067;&#x3059;&#x3002;</p>
+<pre><code>#!/usr/bin/env node
+</code></pre><p>&#x305F;&#x3060;&#x3057;&#x3001;UNIX&#x7CFB;&#x3067;&#x3057;&#x304B;&#x4F7F;&#x3048;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x307E;&#x305F;&#x3001;<code>chmod +x</code>&#x3067;&#x5B9F;&#x884C;&#x30D5;&#x30E9;&#x30B0;&#x3092;&#x7ACB;&#x3066;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;&#x306B;&#x306F;<code>process.argv</code>&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>#!/usr/bin/env node
+
+const name = process.argv[2] || &apos;unknown&apos;;
+console.log(`Hello ${name}!`);
+</code></pre><h2 id="&#x4FBF;&#x5229;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;">&#x4FBF;&#x5229;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/commander" target="_blank">https://www.npmjs.com/package/commander</a><ul>
+<li>&#x9AD8;&#x6A5F;&#x80FD;&#x306A;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F5C;&#x308B;&#x6642;&#x306B;&#x4FBF;&#x5229;&#x3067;&#x3059;</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/fs-extra" target="_blank">https://www.npmjs.com/package/fs-extra</a><ul>
+<li><code>fs</code>&#x3092;&#x62E1;&#x5F35;&#x3059;&#x308B;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5316;">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5316;</h2>
+<p>package.json&#x3092;&#x4F5C;&#x308B;&#x3068;&#x3001;&#x4F9D;&#x5B58;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x308A;&#x3001;npm scripts&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x308A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x307E;&#x305F;&#x3001;npm&#x3067;&#x516C;&#x958B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
+<ul>
+<li>&#x8A66;&#x3057;&#x306B;&#x4F55;&#x304B;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x308B;</li>
+</ul>
+<h2 id="&#x53C2;&#x8003;&#x60C5;&#x5831;">&#x53C2;&#x8003;&#x60C5;&#x5831;</h2>
+<ul>
+<li><a href="https://developer.atlassian.com/blog/2015/11/scripting-with-node/" target="_blank">https://developer.atlassian.com/blog/2015/11/scripting-with-node/</a></li>
+<li><a href="http://sitest.jp/blog/?p=3712" target="_blank">http://sitest.jp/blog/?p=3712</a></li>
+<li><a href="https://nodejs.org/dist/latest-v6.x/docs/api/process.html" target="_blank">https://nodejs.org/dist/latest-v6.x/docs/api/process.html</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lesson-05.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Lesson 05: REPL便利機能">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lesson 06: CLIスクリプトを作る","level":"1.7","depth":1,"next":{"title":"TODO: pure http client","level":"1.8","depth":1,"ref":"","articles":[]},"previous":{"title":"Lesson 05: REPL便利機能","level":"1.6","depth":1,"path":"lesson-05.md","ref":"lesson-05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-06.md","mtime":"2017-01-15T13:45:56.516Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-24T15:05:25.894Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

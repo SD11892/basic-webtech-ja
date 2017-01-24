@@ -1,0 +1,425 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lesson 04: REPLでコーディング · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="lesson-05.html" />
+    
+    
+    <link rel="prev" href="lesson-03.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lesson-01.html">
+            
+                <a href="lesson-01.html">
+            
+                    
+                    Lesson 01: Node.jsとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="lesson-02.html">
+            
+                <a href="lesson-02.html">
+            
+                    
+                    Lesson 02: 環境構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="lesson-03.html">
+            
+                <a href="lesson-03.html">
+            
+                    
+                    Lesson 03: REPLを使う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="lesson-04.html">
+            
+                <a href="lesson-04.html">
+            
+                    
+                    Lesson 04: REPLでコーディング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="lesson-05.html">
+            
+                <a href="lesson-05.html">
+            
+                    
+                    Lesson 05: REPL便利機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="lesson-06.html">
+            
+                <a href="lesson-06.html">
+            
+                    
+                    Lesson 06: CLIスクリプトを作る
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    TODO: pure http client
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    TODO: pure http server
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    TODO: event emitter
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    TODO: fs module
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    TODO: child processes
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Lesson 04: REPLでコーディング</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="repl&#x3067;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;">REPL&#x3067;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;</h1>
+<p>REPL&#x3092;&#x4F7F;&#x3063;&#x3066;&#x5BFE;&#x8A71;&#x7684;&#x306B;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;CSV&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x96C6;&#x8A08;&#x3059;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>&gt; dsum = data =&gt; data.reduce(countUp, {})
+[Function: dsum]
+&gt; countUp = (obj, [key, val]) =&gt; Object.assign(obj, { [key]: (obj[key] || 0) + val })
+[Function: countUp]
+&gt; o={}
+{}
+&gt; countUp(o,[&apos;a&apos;,1])
+{ a: 1 }
+&gt; countUp(o,[&apos;a&apos;,1])
+{ a: 2 }
+&gt; countUp(o,[&apos;b&apos;,1])
+{ a: 2, b: 1 }
+&gt; dsum([[&apos;aaa&apos;,10],[&apos;bbb&apos;,20],[&apos;aaa&apos;,3],[&apos;bbb&apos;,1]])
+{ aaa: 13, bbb: 21 }
+&gt; sumCSV = text =&gt; dsum(parseCSV(text))
+[Function: sumCSV]
+&gt; parseCSV = text =&gt; text.split(&apos;\n&apos;).map(line =&gt; line.split(&apos;,&apos;))
+[Function: parseCSV]
+&gt; parseCSV(&apos;aaa,10\nbbb,20\naaa,3\nbbb,1\n&apos;)
+[ [ &apos;aaa&apos;, &apos;10&apos; ],
+  [ &apos;bbb&apos;, &apos;20&apos; ],
+  [ &apos;aaa&apos;, &apos;3&apos; ],
+  [ &apos;bbb&apos;, &apos;1&apos; ],
+  [ &apos;&apos; ] ]
+&gt; sumCSV(&apos;aaa,10\nbbb,20\naaa,3\nbbb,1\n&apos;)
+{ aaa: &apos;0103&apos;, bbb: &apos;0201&apos;, &apos;&apos;: NaN }
+</code></pre><h2 id="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;</h2>
+<p>&#x3055;&#x3059;&#x304C;&#x306B;&#x898F;&#x6A21;&#x304C;&#x5C11;&#x3057;&#x3067;&#x3082;&#x5927;&#x304D;&#x304F;&#x306A;&#x3063;&#x3066;&#x304F;&#x308B;&#x3068;REPL&#x3060;&#x3051;&#x3067;&#x306F;&#x3064;&#x3089;&#x3044;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x3053;&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;<code>file.js</code>&#x306B;</p>
+<pre><code>dsum = data =&gt; data.reduce(countUp, {});
+countUp = (obj, [key, val]) =&gt; Object.assign(obj, { [key]: (obj[key] || 0) + val });
+</code></pre><p>&#x3068;&#x66F8;&#x3044;&#x305F;&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;</p>
+<pre><code>$ node file.js
+</code></pre><p>&#x306E;&#x3088;&#x3046;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;node&#x3092;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x3068;&#x6700;&#x521D;&#x306B;&#x305D;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5229;&#x7528;">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5229;&#x7528;</h2>
+<p>node.js&#x3084;npm&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3082;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>&gt; fs = require(&apos;fs&apos;)
+</code></pre><p>&#x307E;&#x305F;&#x4F8B;&#x3048;&#x3070;&#x3001;<a href="https://www.npmjs.com/package/csv" target="_blank">https://www.npmjs.com/package/csv</a> &#x304C;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;</p>
+<pre><code>&gt; csv = require(&apos;csv&apos;)
+</code></pre><p>&#x3068;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
+<ul>
+<li>&#x8A66;&#x3057;&#x306B;REPL&#x3067;&#x4F55;&#x304B;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3057;&#x3066;&#x307F;&#x308B;</li>
+</ul>
+<h2 id="&#x53C2;&#x8003;&#x60C5;&#x5831;">&#x53C2;&#x8003;&#x60C5;&#x5831;</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Exploratory_programming" target="_blank">https://en.wikipedia.org/wiki/Exploratory_programming</a> </li>
+<li><a href="https://en.wikipedia.org/wiki/Read&#x2013;eval&#x2013;print_lo" target="_blank">https://en.wikipedia.org/wiki/Read&#x2013;eval&#x2013;print_lo</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lesson-03.html" class="navigation navigation-prev " aria-label="Previous page: Lesson 03: REPLを使う">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lesson-05.html" class="navigation navigation-next " aria-label="Next page: Lesson 05: REPL便利機能">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lesson 04: REPLでコーディング","level":"1.5","depth":1,"next":{"title":"Lesson 05: REPL便利機能","level":"1.6","depth":1,"path":"lesson-05.md","ref":"lesson-05.md","articles":[]},"previous":{"title":"Lesson 03: REPLを使う","level":"1.4","depth":1,"path":"lesson-03.md","ref":"lesson-03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-04.md","mtime":"2017-01-15T08:17:11.243Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-24T15:05:25.894Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
