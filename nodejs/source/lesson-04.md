@@ -21,37 +21,15 @@ REPLを使って対話的にコーディングすることができます。
 { aaa: 13, bbb: 21 }
 > sumCSV = text => dsum(parseCSV(text))
 [Function: sumCSV]
-> parseCSV = text => text.split('\n').map(line => line.split(','))
+> parseCSV = text => text.trim().split('\n').map(line => line.split(',').map(toNum))
 [Function: parseCSV]
+> toNum = text => text.match(/^\d+$/) ? Number(text) : text
+[Function: toNum]
 > parseCSV('aaa,10\nbbb,20\naaa,3\nbbb,1\n')
-[ [ 'aaa', '10' ],
-  [ 'bbb', '20' ],
-  [ 'aaa', '3' ],
-  [ 'bbb', '1' ],
-  [ '' ] ]
+[ [ 'aaa', 10 ], [ 'bbb', 20 ], [ 'aaa', 3 ], [ 'bbb', 1 ] ]
 > sumCSV('aaa,10\nbbb,20\naaa,3\nbbb,1\n')
-{ aaa: '0103', bbb: '0201', '': NaN }
+{ aaa: 13, bbb: 21 }
 ```
-
-## ファイルの読み込み
-
-さすがに規模が少しでも大きくなってくるとREPLだけではつらいです。
-そこでファイルにコードを書いて読み込むようにしましょう。
-
-例えば、`file.js`に
-
-```
-dsum = data => data.reduce(countUp, {});
-countUp = (obj, [key, val]) => Object.assign(obj, { [key]: (obj[key] || 0) + val });
-```
-
-と書いたとすると、
-
-```
-$ node file.js
-```
-
-のようにファイルを指定してnodeを起動すると最初にそのファイルが読み込まれます。
 
 ## パッケージの利用
 
