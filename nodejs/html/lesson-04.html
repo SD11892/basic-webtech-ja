@@ -309,26 +309,15 @@
 { aaa: 13, bbb: 21 }
 &gt; sumCSV = text =&gt; dsum(parseCSV(text))
 [Function: sumCSV]
-&gt; parseCSV = text =&gt; text.split(&apos;\n&apos;).map(line =&gt; line.split(&apos;,&apos;))
+&gt; parseCSV = text =&gt; text.trim().split(&apos;\n&apos;).map(line =&gt; line.split(&apos;,&apos;).map(toNum))
 [Function: parseCSV]
+&gt; toNum = text =&gt; text.match(/^\d+$/) ? Number(text) : text
+[Function: toNum]
 &gt; parseCSV(&apos;aaa,10\nbbb,20\naaa,3\nbbb,1\n&apos;)
-[ [ &apos;aaa&apos;, &apos;10&apos; ],
-  [ &apos;bbb&apos;, &apos;20&apos; ],
-  [ &apos;aaa&apos;, &apos;3&apos; ],
-  [ &apos;bbb&apos;, &apos;1&apos; ],
-  [ &apos;&apos; ] ]
+[ [ &apos;aaa&apos;, 10 ], [ &apos;bbb&apos;, 20 ], [ &apos;aaa&apos;, 3 ], [ &apos;bbb&apos;, 1 ] ]
 &gt; sumCSV(&apos;aaa,10\nbbb,20\naaa,3\nbbb,1\n&apos;)
-{ aaa: &apos;0103&apos;, bbb: &apos;0201&apos;, &apos;&apos;: NaN }
-</code></pre><h2 id="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;</h2>
-<p>&#x3055;&#x3059;&#x304C;&#x306B;&#x898F;&#x6A21;&#x304C;&#x5C11;&#x3057;&#x3067;&#x3082;&#x5927;&#x304D;&#x304F;&#x306A;&#x3063;&#x3066;&#x304F;&#x308B;&#x3068;REPL&#x3060;&#x3051;&#x3067;&#x306F;&#x3064;&#x3089;&#x3044;&#x3067;&#x3059;&#x3002;
-&#x305D;&#x3053;&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
-<p>&#x4F8B;&#x3048;&#x3070;&#x3001;<code>file.js</code>&#x306B;</p>
-<pre><code>dsum = data =&gt; data.reduce(countUp, {});
-countUp = (obj, [key, val]) =&gt; Object.assign(obj, { [key]: (obj[key] || 0) + val });
-</code></pre><p>&#x3068;&#x66F8;&#x3044;&#x305F;&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;</p>
-<pre><code>$ node file.js
-</code></pre><p>&#x306E;&#x3088;&#x3046;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;node&#x3092;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x3068;&#x6700;&#x521D;&#x306B;&#x305D;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5229;&#x7528;">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5229;&#x7528;</h2>
+{ aaa: 13, bbb: 21 }
+</code></pre><h2 id="&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5229;&#x7528;">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5229;&#x7528;</h2>
 <p>node.js&#x3084;npm&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3082;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <pre><code>&gt; fs = require(&apos;fs&apos;)
 </code></pre><p>&#x307E;&#x305F;&#x4F8B;&#x3048;&#x3070;&#x3001;<a href="https://www.npmjs.com/package/csv" target="_blank">https://www.npmjs.com/package/csv</a> &#x304C;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;</p>
@@ -386,7 +375,7 @@ countUp = (obj, [key, val]) =&gt; Object.assign(obj, { [key]: (obj[key] || 0) + 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lesson 04: REPLでコーディング","level":"1.5","depth":1,"next":{"title":"Lesson 05: REPL便利機能","level":"1.6","depth":1,"path":"lesson-05.md","ref":"lesson-05.md","articles":[]},"previous":{"title":"Lesson 03: REPLを使う","level":"1.4","depth":1,"path":"lesson-03.md","ref":"lesson-03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-04.md","mtime":"2017-01-15T08:17:11.243Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-24T15:05:25.894Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lesson 04: REPLでコーディング","level":"1.5","depth":1,"next":{"title":"Lesson 05: REPL便利機能","level":"1.6","depth":1,"path":"lesson-05.md","ref":"lesson-05.md","articles":[]},"previous":{"title":"Lesson 03: REPLを使う","level":"1.4","depth":1,"path":"lesson-03.md","ref":"lesson-03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-04.md","mtime":"2017-01-25T11:20:08.942Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-25T11:20:41.163Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
