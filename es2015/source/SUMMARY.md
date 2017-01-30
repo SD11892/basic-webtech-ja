@@ -10,6 +10,9 @@
 * [Lesson 07: template literal](lesson-07.md)
 
 
-* TODO: array rest/spread
-* TODO: arguments default/rest/spread
-* TODO: array prototypes
+* [Lesson 08: array rest/spread](lesson-08.md)
+* [Lesson 09: arguments default/rest/spread](lesson-09.md)
+* [Lesson 10: array helpers](lesson-10.md)
+* [Lesson 11: iterators](lesson-11.md)
+* [Lesson 12: proxies](lesson-12.md)
+* [Lesson 13: tail calls](lesson-13.md)
