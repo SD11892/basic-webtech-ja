@@ -9,3 +9,7 @@
 * [Lesson 06: middleware](lesson-06.md)
 * [Lesson 07: session](lesson-07.md)
 
+* TODO: named path
+* TODO: regex path
+* TODO: routing
+* TODO: folder structure
