@@ -10,5 +10,5 @@
 * [Lesson 07: コンポーネント化](lesson-07.md)
 
 * [Appendix 01: Single file componentについて](appendix-01.md)
-* Routerについて
-* Vuexについて
+* TODO: Vue Routerについて
+* TODO: Vuexについて
