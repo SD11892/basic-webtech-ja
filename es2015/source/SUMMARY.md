@@ -12,7 +12,7 @@
 
 * [Lesson 08: array rest/spread](lesson-08.md)
 * [Lesson 09: arguments default/rest/spread](lesson-09.md)
-* [Lesson 10: array helpers](lesson-10.md)
-* [Lesson 11: iterators](lesson-11.md)
+* [Lesson 10: iterators](lesson-10.md)
+* [Lesson 11: array methods](lesson-11.md)
 * [Lesson 12: proxies](lesson-12.md)
 * [Lesson 13: tail calls](lesson-13.md)
