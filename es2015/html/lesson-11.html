@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Lesson 02: 環境構築 · GitBook</title>
+        <title>Lesson 11: array methods · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="lesson-03.html" />
     
-    
-    <link rel="prev" href="lesson-01.html" />
+    <link rel="prev" href="lesson-10.html" />
     
 
     </head>
@@ -115,7 +113,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="lesson-02.html">
+        <li class="chapter " data-level="1.3" data-path="lesson-02.html">
             
                 <a href="lesson-02.html">
             
@@ -239,7 +237,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="lesson-11.html">
+        <li class="chapter active" data-level="2.4" data-path="lesson-11.html">
             
                 <a href="lesson-11.html">
             
@@ -315,7 +313,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Lesson 02: 環境構築</a>
+        <a href="." >Lesson 11: array methods</a>
     </h1>
 </div>
 
@@ -330,20 +328,53 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x74B0;&#x5883;&#x69CB;&#x7BC9;">&#x74B0;&#x5883;&#x69CB;&#x7BC9;</h1>
-<h2 id="web&#x74B0;&#x5883;">Web&#x74B0;&#x5883;</h2>
-<p>&#x3044;&#x305A;&#x308C;&#x304B;&#x306E;&#x30B5;&#x30A4;&#x30C8;&#x3092;&#x4F7F;&#x3046;</p>
+                                <h1 id="array-methods">array methods</h1>
+<h2 id="from">from</h2>
+<p>&#x914D;&#x5217;&#x3063;&#x307D;&#x3044;&#x3082;&#x306E;&#x304B;&#x3089;&#x914D;&#x5217;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Array.from(&apos;javascript&apos;)
+Array.from(&apos;javascript&apos;, x =&gt; `&quot;${x}&quot;`)
+</code></pre><p>&#x914D;&#x5217;&#x3084;&#x6587;&#x5B57;&#x5217;&#x306B;&#x52A0;&#x3048;&#x3066;iterable&#x3082;&#x6E21;&#x305B;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Array.from(Array(10).keys())
+</code></pre><h2 id="of">of</h2>
+<p>&#x914D;&#x5217;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3068;&#x307B;&#x3068;&#x3093;&#x3069;&#x540C;&#x3058;&#x3067;&#x3059;&#x304C;&#x3001;&#x5F15;&#x6570;&#x304C;&#x4E00;&#x3064;&#x306E;&#x5834;&#x5408;&#x304C;&#x3088;&#x308A;&#x76F4;&#x611F;&#x7684;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Array(5, 4, 3)
+Array(5, 4)
+Array(5)
+Array.of(5, 4, 3)
+Array.of(5, 4)
+Array.of(5)
+</code></pre><h2 id="fill">fill</h2>
+<p>&#x914D;&#x5217;&#x306E;&#x8981;&#x7D20;&#x3092;&#x5168;&#x90E8;&#x540C;&#x3058;&#x3082;&#x306E;&#x3067;&#x57CB;&#x3081;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>[1, 2, 3, 4, 5, 6].fill(5)
+[1, 2, 3, 4, 5, 6].fill(5, 2, 4)
+</code></pre><h2 id="findfindindex">find,findIndex</h2>
+<p>&#x914D;&#x5217;&#x304B;&#x3089;&#x6761;&#x4EF6;&#x306B;&#x5408;&#x3046;&#x8981;&#x7D20;&#x3092;&#x63A2;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>[0, 0, 3, 0, 2].find(x =&gt; x &gt; 0);
+[0, 0, 3, 0, 2].findIndex(x =&gt; x &gt; 0);
+</code></pre><h2 id="keysentriesvalues">keys,entries,values</h2>
+<p>&#x914D;&#x5217;&#x304B;&#x3089;iterator&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Array.from([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;].keys())
+Array.from([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;].entries())
+</code></pre><p><code>values</code>&#x306F;Node v6&#x3067;&#x306F;&#x4F7F;&#x3048;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<h2 id="filtermapreduceeverysome">filter,map,reduce,every,some</h2>
+<p>ES5&#x304B;&#x3089;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x3053;&#x308C;&#x3092;&#x6A5F;&#x4F1A;&#x306B;&#x5FA9;&#x7FD2;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>[1, 2, 3, 4, 5].filter(x =&gt; x &gt; 3)
+[1, 2, 3, 4, 5].map(x =&gt; x * 2)
+[1, 2, 3, 4, 5].reduce((x, y) =&gt; x + y, 0)
+[1, 2, 3, 4, 5].some(x =&gt; x &gt; 3)
+[1, 2, 3, 4, 5].every(x =&gt; x &gt; 3)
+</code></pre><h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
+<ol>
+<li>&#x305D;&#x308C;&#x305E;&#x308C;&#x52D5;&#x4F5C;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</li>
+</ol>
+<h2 id="&#x53C2;&#x8003;&#x60C5;&#x5831;">&#x53C2;&#x8003;&#x60C5;&#x5831;</h2>
 <ul>
-<li><a href="https://codepen.io" target="_blank">https://codepen.io</a></li>
-<li><a href="https://jsbin.com" target="_blank">https://jsbin.com</a></li>
-<li><a href="https://jsfiddle.net" target="_blank">https://jsfiddle.net</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></li>
 </ul>
-<h2 id="&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x74B0;&#x5883;">&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x74B0;&#x5883;</h2>
-<p>Node.js v6&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;</p>
+<h2 id="&#x304A;&#x307E;&#x3051;">&#x304A;&#x307E;&#x3051;</h2>
 <ul>
-<li><a href="https://nodejs.org/en/download/" target="_blank">https://nodejs.org/en/download/</a></li>
+<li>Array.prototypes.includes&#x306F;ES2016&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;</li>
 </ul>
-<p><a href="http://node.green" target="_blank">http://node.green</a> &#x306B;&#x3088;&#x308B;&#x3068;v6.9.2&#x306F;99%&#x306E;ES2015&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x308B;</p>
 
                                 
                                 </section>
@@ -371,14 +402,10 @@
 
             
                 
-                <a href="lesson-01.html" class="navigation navigation-prev " aria-label="Previous page: Lesson 01: ES2015とは">
+                <a href="lesson-10.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Lesson 10: iterators">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="lesson-03.html" class="navigation navigation-next " aria-label="Next page: Lesson 03: constとlet">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -387,7 +414,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lesson 02: 環境構築","level":"1.3","depth":1,"next":{"title":"Lesson 03: constとlet","level":"1.4","depth":1,"path":"lesson-03.md","ref":"lesson-03.md","articles":[]},"previous":{"title":"Lesson 01: ES2015とは","level":"1.2","depth":1,"path":"lesson-01.md","ref":"lesson-01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-02.md","mtime":"2017-01-06T01:09:29.453Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-14T14:15:44.719Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lesson 11: array methods","level":"2.4","depth":1,"next":{"title":"TODO: proxies","level":"3.1","depth":1,"ref":"","articles":[]},"previous":{"title":"Lesson 10: iterators","level":"2.3","depth":1,"path":"lesson-10.md","ref":"lesson-10.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-11.md","mtime":"2017-02-09T07:32:48.689Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-14T14:15:44.719Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
