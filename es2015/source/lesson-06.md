@@ -3,7 +3,7 @@
 オブジェクトや配列の構造を分解して変数に代入することができます。
 
 ```
-const obj = { a: 1, b: 2};
+const obj = { a: 1, b: 2 };
 const { a, b } = obj;
 const arr = [1, 2];
 const [x, y] = arr;
