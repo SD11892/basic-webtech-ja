@@ -17,9 +17,11 @@ JSを次のようにします。
 ```
 new Vue({ 
   el: '#app',
-  data: { items, newTitle: '' },})
+  data: { items, newTitle: '' },
 });
 ```
+
+これで、フォームから新しいアイテムを追加できるようになりました。
 
 ## 課題
 

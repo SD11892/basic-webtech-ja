@@ -12,6 +12,9 @@ Vue.component('item-component', {
 });
 ```
 
+`template`はこのコンポーネントが提供するHTMLテンプレートで、
+`props`はこのテンプレートが入力として受け取るプロパティです。
+
 これを使うにはHTMLを次のようにします。
 
 ```
@@ -20,7 +23,8 @@ Vue.component('item-component', {
 </li>
 ```
 
-これで動作します。
+`:item`でプロパティを渡しています。
+これでテンプレートを使って動かすことができました。
 
 ところで、コンポーネントはone-way data flowが基本なので、v-modelを使うのは好ましくないかもしれません。
 
@@ -38,13 +42,20 @@ Vue.component('item-component', {
 });
 ```
 
-この場合はHTMLを次のようにします。
+v-modelではなく`:checked`すなわち`v-bind:checked`でチェックボックスの状態を入力しています。
+一方、変更時は`@change`すなわち`v-on:change`で検知してtoggleイベントを発行しています。
+
+このコンポーネントを使う場合はHTMLを次のようにします。
 
 ```
 <li v-for="item in items">
   <item-component :item="item" @toggle="item.checked = !item.checked"/>
 </li>
 ```
+
+`@toggle`すなわち`v-on:change`でtoggleイベントのイベントハンドラを指定して値を変更しています。
+
+(備考) この例はコンポーネントの学習としては適さないかもしれません。詳しくは公式ガイドを参照しましょう。
 
 ## 課題
 
