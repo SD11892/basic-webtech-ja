@@ -7,6 +7,6 @@
 ## 作業用ディレクトリを作成
 
 ```
-mkdir graphql-trial
-cd graphql-trial
+$ mkdir graphql-trial
+$ cd graphql-trial
 ```
