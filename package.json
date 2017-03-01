@@ -6,6 +6,7 @@
     "build-nodejs": "GITBOOK_DIR=. gitbook build nodejs/source nodejs/html",
     "build-express": "GITBOOK_DIR=. gitbook build express/source express/html",
     "build-vuejs": "GITBOOK_DIR=. gitbook build vuejs/source vuejs/html",
+    "build-babel": "GITBOOK_DIR=. gitbook build babel/source babel/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
