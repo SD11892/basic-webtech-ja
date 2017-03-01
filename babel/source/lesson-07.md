@@ -13,6 +13,7 @@ Babel公式プリセットとしては、次のようなプリセットがあり
 - es2015
 - react
 - stage-0
+- stage-2
 - stage-1
 - stage-3
 
