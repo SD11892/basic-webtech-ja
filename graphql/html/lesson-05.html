@@ -1,0 +1,388 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lesson 05: Schemaの例 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="lesson-06.html" />
+    
+    
+    <link rel="prev" href="lesson-04.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lesson-01.html">
+            
+                <a href="lesson-01.html">
+            
+                    
+                    Lesson 01: GraphQLとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="lesson-02.html">
+            
+                <a href="lesson-02.html">
+            
+                    
+                    Lesson 02: 環境構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="lesson-03.html">
+            
+                <a href="lesson-03.html">
+            
+                    
+                    Lesson 03: Queryの例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="lesson-04.html">
+            
+                <a href="lesson-04.html">
+            
+                    
+                    Lesson 04: GraphiQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="lesson-05.html">
+            
+                <a href="lesson-05.html">
+            
+                    
+                    Lesson 05: Schemaの例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="lesson-06.html">
+            
+                <a href="lesson-06.html">
+            
+                    
+                    Lesson 06: Schemaの例その2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="lesson-07.html">
+            
+                <a href="lesson-07.html">
+            
+                    
+                    Lesson 07: サーバのコード例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="lesson-08.html">
+            
+                <a href="lesson-08.html">
+            
+                    
+                    Lesson 08: クライアントのコード例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Lesson 05: Schemaの例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="schema&#x306E;&#x4F8B;">Schema&#x306E;&#x4F8B;</h1>
+<p>GraphiQL&#x304C;&#x4FBF;&#x5229;&#x306B;&#x4F7F;&#x3048;&#x308B;&#x306E;&#x306F;JSON&#x30C7;&#x30FC;&#x30BF;&#x306E;Schema&#x304C;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3089;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="query&#x306E;schema">Query&#x306E;Schema</h2>
+<h3 id="object-types-and-built-in-scalar-types">Object types and built-in scalar types</h3>
+<p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>type Character {
+  name: String!
+  appearsIn: [Episode]!
+}
+</code></pre><p>&#x3053;&#x3053;&#x3067;&#x3001;String&#x306F;&#x30B9;&#x30AB;&#x30E9;&#x30FC;&#x30BF;&#x30A4;&#x30D7;&#x3067;&#x3001;Episode&#x306F;&#x5225;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3067;&#x3059;&#x3002;</p>
+<p><code>!</code>&#x306F;&#x5FC5;&#x9808;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;(&#x6B63;&#x78BA;&#x306B;&#x306F;non-null)</p>
+<p>&#x3042;&#x3089;&#x304B;&#x3058;&#x3081;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30B9;&#x30AB;&#x30E9;&#x30FC;&#x30BF;&#x30A4;&#x30D7;&#x306F;&#x4E0B;&#x8A18;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li>Int: &#x7B26;&#x53F7;&#x4ED8;&#x304D;32&#x30D3;&#x30C3;&#x30C8;&#x6574;&#x6570;</li>
+<li>Float: &#x7B26;&#x53F7;&#x4ED8;&#x304D;double&#x30B5;&#x30A4;&#x30BA;&#x306E;&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;&#x6570;</li>
+<li>String: UTF-8&#x6587;&#x5B57;&#x5217;</li>
+<li>Boolean: &#x771F;&#x507D;&#x5024;(<code>true</code> / <code>false</code>)</li>
+<li>ID: &#x5185;&#x90E8;&#x7684;&#x306B;&#x306F;&#x6587;&#x5B57;&#x5217;&#x3060;&#x304C;&#x3001;&#x4EBA;&#x9593;&#x304C;&#x8AAD;&#x3081;&#x308B;&#x3053;&#x3068;&#x3092;&#x60F3;&#x5B9A;&#x3057;&#x306A;&#x3044;</li>
+</ul>
+<p>&#x30B9;&#x30AB;&#x30E9;&#x30FC;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x72EC;&#x81EA;&#x306B;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>scalar Date
+</code></pre><h3 id="arguments-and-enumeration-types">Arguments and enumeration types</h3>
+<p>&#x5168;&#x3066;&#x306E;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306B;&#x306F;&#x5F15;&#x6570;&#x3092;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>type Starship {
+  id: ID!
+  name: String!
+  length(unit: LengthUnit = METER): Float
+}
+</code></pre><p>&#x3053;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x3001;length&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306B;unit&#x3068;&#x3044;&#x3046;&#x5F15;&#x6570;&#x304C;&#x3064;&#x3051;&#x3089;&#x308C;&#x3001;&#x305D;&#x308C;&#x306F;LengthUnit&#x3068;&#x3044;&#x3046;&#x65B9;&#x3092;&#x6301;&#x3061;&#x3001;&#x305D;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x306F;METER&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>LengthUnit&#x306F;enum&#x30BF;&#x30A4;&#x30D7;&#x3067;&#x4F8B;&#x3048;&#x3070;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>enum LengthUnit {
+  METER
+  FOOT
+}
+</code></pre><h3 id="&#x305D;&#x306E;&#x4ED6;">&#x305D;&#x306E;&#x4ED6;</h3>
+<p>&#x4ECA;&#x56DE;&#x306F;&#x8A73;&#x3057;&#x304F;&#x306F;&#x53D6;&#x308A;&#x6271;&#x3044;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;<code>interface</code>&#x3084;<code>union</code>&#x3084;<code>input</code>&#x3068;&#x3044;&#x3046;&#x69CB;&#x6587;&#x3082;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="query&#x306E;&#x5B9A;&#x7FA9;">Query&#x306E;&#x5B9A;&#x7FA9;</h2>
+<p>Query&#x3068;&#x3044;&#x3046;&#x7279;&#x6B8A;&#x306A;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x30EB;&#x30FC;&#x30C8;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>type Query {
+  hero(episode: Episode): Character
+  droid(id: ID!): Droid
+}
+</code></pre><p>&#x4EE5;&#x524D;&#x306F;&#x3053;&#x308C;&#x306B;&#x52A0;&#x3048;&#x3066;&#x3001;</p>
+<pre><code>schema {
+  query: Query
+}
+</code></pre><p>&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3057;&#x305F;&#x304C;&#x3001;&#x4ECA;&#x306F;&#x4E0D;&#x8981;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;(&#x8981;&#x51FA;&#x5178;)</p>
+<h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
+<ol>
+<li>&#x4F55;&#x304B;&#x60F3;&#x50CF;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x306E;Schema&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;</li>
+</ol>
+<h2 id="&#x53C2;&#x8003;&#x60C5;&#x5831;">&#x53C2;&#x8003;&#x60C5;&#x5831;</h2>
+<ul>
+<li><a href="http://graphql.org/learn/schema/" target="_blank">http://graphql.org/learn/schema/</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lesson-04.html" class="navigation navigation-prev " aria-label="Previous page: Lesson 04: GraphiQL">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lesson-06.html" class="navigation navigation-next " aria-label="Next page: Lesson 06: Schemaの例その2">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lesson 05: Schemaの例","level":"1.6","depth":1,"next":{"title":"Lesson 06: Schemaの例その2","level":"1.7","depth":1,"path":"lesson-06.md","ref":"lesson-06.md","articles":[]},"previous":{"title":"Lesson 04: GraphiQL","level":"1.5","depth":1,"path":"lesson-04.md","ref":"lesson-04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-05.md","mtime":"2017-02-23T15:15:06.839Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-07T22:27:56.508Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
