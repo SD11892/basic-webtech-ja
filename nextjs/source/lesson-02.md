@@ -23,7 +23,7 @@ $ cd nextjs-trial
     "start": "next start"
   },
   "dependencies": {
-    "next": "^2.0.0-beta.33",
+    "next": "^2.0.0-beta.36",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }
