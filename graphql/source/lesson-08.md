@@ -43,7 +43,7 @@ const query = gql`query {
   }
 }`;
 
-const showResult = (items) => {
+const showResult = ({ data: { items } }) => {
   const list = items.map(item => `<li>${item.title} - ${item.description}</li>`);
   document.getElementById('result').innerHTML = `<ul>${list}</ul>`;
 };
