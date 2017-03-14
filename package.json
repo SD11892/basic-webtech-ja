@@ -8,6 +8,7 @@
     "build-vuejs": "GITBOOK_DIR=. gitbook build vuejs/source vuejs/html",
     "build-babel": "GITBOOK_DIR=. gitbook build babel/source babel/html",
     "build-graphql": "GITBOOK_DIR=. gitbook build graphql/source graphql/html",
+    "build-webpack": "GITBOOK_DIR=. gitbook build webpack/source webpack/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
