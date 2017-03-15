@@ -7,7 +7,7 @@ Webpack v2ではES modulesだけサポートされているので注意が必要
 
 ## サンプルファイルの更新　
 
-public/index.jsを次のようにしてみましょう。
+src/index.jsを次のようにしてみましょう。
 
 ```
 import moment from 'moment';
