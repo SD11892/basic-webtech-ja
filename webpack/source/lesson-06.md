@@ -56,7 +56,7 @@ module.exports = {
 
 さらに機能を拡張するためのプラグインを指定できます。
 
-例えば、HtmlWebpackPluinを使うと、bundle.jsを組み込んだHTMLファイルを生成できます。
+例えば、HtmlWebpackPluginを使うと、bundle.jsを組み込んだHTMLファイルを生成できます。
 
 また、プロダクションビルドでは`webpack.optimize.UglifyJsPlugin`が使われていました。
 
