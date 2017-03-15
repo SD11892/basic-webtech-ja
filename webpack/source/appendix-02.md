@@ -4,7 +4,7 @@ webpackは主にブラウザ向けのビルドツールですが、Node.jsにお
 サーバサイドで使う場合にメリットがあるシーンとしては、
 
 - server-side rendering (SSR)
-- hot module repacement (HMR)
+- hot module replacement (HMR)
 
 があります。
 Reactアプリの例はいくつか知られているので調べてみましょう。
