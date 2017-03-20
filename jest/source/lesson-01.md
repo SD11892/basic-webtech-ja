@@ -11,3 +11,4 @@
 ## 参考情報
 
 - https://facebook.github.io/jest/
+- https://www.webprofessional.jp/test-react-components-jest-1/
