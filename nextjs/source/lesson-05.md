@@ -9,7 +9,7 @@ next.jsでのページ遷移はserver-side renderingをサポートするため�
 index.jsに置いて次のようにしてabout.jsへのリンクを作ります。
 
 ```
-import Link from 'next/Link';
+import Link from 'next/link';
 
 export default () => (
   <div>
@@ -39,7 +39,7 @@ next.jsではcode splittingが有効なため、ページは必要になって�
 そこで、事前に取得するプリフェッチを指定することで、事前にロードしてページの表示を速くすることができます。
 
 ```
-import Link from 'next/Link';
+import Link from 'next/link';
 
 export default () => (
   <div>
