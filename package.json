@@ -9,6 +9,7 @@
     "build-babel": "GITBOOK_DIR=. gitbook build babel/source babel/html",
     "build-graphql": "GITBOOK_DIR=. gitbook build graphql/source graphql/html",
     "build-webpack": "GITBOOK_DIR=. gitbook build webpack/source webpack/html",
+    "build-nextjs": "GITBOOK_DIR=. gitbook build nextjs/source nextjs/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
