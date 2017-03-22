@@ -1,0 +1,399 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lesson 06: 外部API呼び出し · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="lesson-07.html" />
+    
+    
+    <link rel="prev" href="lesson-05.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lesson-01.html">
+            
+                <a href="lesson-01.html">
+            
+                    
+                    Lesson 01: Next.jsとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="lesson-02.html">
+            
+                <a href="lesson-02.html">
+            
+                    
+                    Lesson 02: 環境構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="lesson-03.html">
+            
+                <a href="lesson-03.html">
+            
+                    
+                    Lesson 03: ページ作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="lesson-04.html">
+            
+                <a href="lesson-04.html">
+            
+                    
+                    Lesson 04: 画像ファイルとhead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="lesson-05.html">
+            
+                <a href="lesson-05.html">
+            
+                    
+                    Lesson 05: ページ遷移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="lesson-06.html">
+            
+                <a href="lesson-06.html">
+            
+                    
+                    Lesson 06: 外部API呼び出し
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="lesson-07.html">
+            
+                <a href="lesson-07.html">
+            
+                    
+                    Lesson 07: スタイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="lesson-08.html">
+            
+                <a href="lesson-08.html">
+            
+                    
+                    Lesson 08: プロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Lesson 06: 外部API呼び出し</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5916;&#x90E8;api&#x547C;&#x3073;&#x51FA;&#x3057;">&#x5916;&#x90E8;API&#x547C;&#x3073;&#x51FA;&#x3057;</h1>
+<p>&#x5916;&#x90E8;API&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x306A;&#x3069;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x3092;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;
+class&#x578B;&#x306E;&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x5236;&#x5FA1;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="getinitialprops">getInitialProps</h2>
+<p>React&#x3092;&#x62E1;&#x5F35;&#x3057;&#x305F;&#x65B0;&#x3057;&#x3044;&#x30E9;&#x30A4;&#x30D5;&#x30B5;&#x30A4;&#x30AF;&#x30EB;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x3059;&#x3002;
+&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x304C;&#x6700;&#x521D;&#x306B;&#x4F5C;&#x3089;&#x308C;&#x305F;&#x6642;&#x306B;&#x547C;&#x3070;&#x308C;&#x3001;props&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x30B5;&#x30FC;&#x30D0;&#x3067;&#x3082;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x3067;&#x3082;&#x52D5;&#x304F;&#x30B3;&#x30FC;&#x30C9;&#x306A;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;</p>
+<p>static&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x3042;&#x308A;async&#x304C;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x7C21;&#x5358;&#x306A;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3092;&#x52D5;&#x304B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>index.js&#x3092;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>import React from &apos;react&apos;;
+import Link from &apos;next/link&apos;;
+
+export default class extends React.Component {
+  static async getInitialProps({ req }) {
+    await new Promise(cb =&gt; setTimeout(cb, 1000));
+    return {
+      from: req ? &apos;server&apos; : &apos;client&apos;,
+      userAgent: req ? req.headers[&apos;user-agent&apos;] : navigator.userAgent,
+    };
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello Next.js&lt;/h1&gt;
+    &lt;p&gt;from {this.props.from}&lt;/p&gt;
+    &lt;p&gt;{this.props.userAgent}&lt;/p&gt;
+        &lt;Link href=&quot;/about&quot;&gt;&lt;a&gt;About&lt;/a&gt;&lt;/Link&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre><p>&#x30B5;&#x30FC;&#x30D0;&#x3067;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x305F;&#x5834;&#x5408;&#x3068;&#x30B5;&#x30FC;&#x30D0;&#x3067;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x305F;&#x5834;&#x5408;&#x3067;&#x9055;&#x3046;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="isomorphic-fetch">isomorphic-fetch</h2>
+<p>&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x3067;&#x3082;&#x30B5;&#x30FC;&#x30D0;&#x3067;&#x3082;&#x4F7F;&#x3048;&#x308B;fetch&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ npm install isomorphic-fetch --save
+</code></pre><h2 id="api&#x547C;&#x3073;&#x51FA;&#x3057;">API&#x547C;&#x3073;&#x51FA;&#x3057;</h2>
+<p>&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x70BA;&#x66FF;&#x30EC;&#x30FC;&#x30C8;&#x306E;API&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3066;&#x8868;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>import React from &apos;react&apos;;
+import Link from &apos;next/link&apos;;
+import &apos;isomorphic-fetch&apos;;
+
+export default class extends React.Component {
+  static async getInitialProps() {
+    const res = await fetch(&apos;http://api.fixer.io/latest?base=USD&apos;);
+    const data = await res.json();
+    return {
+      rate: data.rates.JPY,
+    };
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello Next.js&lt;/h1&gt;
+        &lt;p&gt;JPY/USD = {this.props.rate}&lt;/p&gt;
+        &lt;Link href=&quot;/about&quot;&gt;&lt;a&gt;About&lt;/a&gt;&lt;/Link&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre><h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
+<ol>
+<li>&#x4E0A;&#x8A18;&#x306E;&#x52D5;&#x4F5C;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</li>
+<li>API&#x547C;&#x3073;&#x51FA;&#x3057;&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x5909;&#x3048;&#x308B;(&#x3067;&#x304D;&#x308C;&#x3070;&#x52D5;&#x7684;&#x306B;)</li>
+<li>(&#x6311;&#x6226;) &#x4ED6;&#x306E;API&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lesson-05.html" class="navigation navigation-prev " aria-label="Previous page: Lesson 05: ページ遷移">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lesson-07.html" class="navigation navigation-next " aria-label="Next page: Lesson 07: スタイル">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lesson 06: 外部API呼び出し","level":"1.7","depth":1,"next":{"title":"Lesson 07: スタイル","level":"1.8","depth":1,"path":"lesson-07.md","ref":"lesson-07.md","articles":[]},"previous":{"title":"Lesson 05: ページ遷移","level":"1.6","depth":1,"path":"lesson-05.md","ref":"lesson-05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-06.md","mtime":"2017-03-09T15:10:55.705Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-22T10:10:16.550Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
