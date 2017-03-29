@@ -8,7 +8,7 @@ src/sum.jsというファイルを作成します。
 
 ```
 exports.sum = (a, b) => a + b;
-exports.sum3 = (a, b, c) => a + b +c;
+exports.sum3 = (a, b, c) => a + b + c;
 exports.sumList = (...list) => list.reduce(sum, 0);
 ```
 
