@@ -17,7 +17,7 @@ exports.sumN = (...list) => list.reduce(exports.sum, 0);
 src/sum.test.jsというファイルを作成します。
 
 ```
-const { sum, sum3, sumList } = require('./sum');
+const { sum, sum3, sumN } = require('./sum');
 
 describe('sum test', () => {
   it('adds 1 + 2', () => {
