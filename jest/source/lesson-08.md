@@ -52,7 +52,7 @@ export default () => (
 
 ## コンポーネントのソースコード
 
-src/Hello.text.jsx
+src/Hello.test.jsx
 
 ```
 import React from 'react';
@@ -72,7 +72,7 @@ describe('Hello component', () => {
 ## テスト実行
 
 ```
-$ npm test src/Hello.text.jsx
+$ npm test src/Hello.test.jsx
 ```
 
 ## ドキュメント
