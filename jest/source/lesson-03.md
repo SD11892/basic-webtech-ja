@@ -9,7 +9,7 @@ src/sum.jsというファイルを作成します。
 ```
 exports.sum = (a, b) => a + b;
 exports.sum3 = (a, b, c) => a + b + c;
-exports.sumList = (...list) => list.reduce(sum, 0);
+exports.sumN = (...list) => list.reduce(exports.sum, 0);
 ```
 
 ## テストコード
@@ -53,4 +53,4 @@ $ npm test
 
 1. 上記の動作を確認する
 2. `sum3` のテストコードを書く
-3. `sumList` のテストコードを書く
+3. `sumN` のテストコードを書く
