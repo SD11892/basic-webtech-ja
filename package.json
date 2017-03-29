@@ -10,6 +10,7 @@
     "build-graphql": "GITBOOK_DIR=. gitbook build graphql/source graphql/html",
     "build-webpack": "GITBOOK_DIR=. gitbook build webpack/source webpack/html",
     "build-nextjs": "GITBOOK_DIR=. gitbook build nextjs/source nextjs/html",
+    "build-jest": "GITBOOK_DIR=. gitbook build jest/source jest/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
