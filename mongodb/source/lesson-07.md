@@ -16,7 +16,7 @@ MongoClient.connect('mongodb://localhost:27017/test', (err, db) => {
   collection.find({}).toArray((err2, docs) => {
     console.log(docs);
     db.close();
-  })
+  });
 });
 ```
 
