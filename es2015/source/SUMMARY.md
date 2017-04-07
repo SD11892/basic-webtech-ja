@@ -16,7 +16,7 @@
 * [Lesson 11: array methods](lesson-11.md)
 
 
-* TODO: modules
-* TODO: promises
-* TODO: proxies
-* TODO: tail calls
+* [Lesson 12: modules](lesson-12.md)
+* [Lesson 13: promises](lesson-13.md)
+* [Lesson 14: proxies](lesson-14.md)
+* [Lesson 15: tail calls](lesson-15.md)
