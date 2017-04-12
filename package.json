@@ -12,6 +12,7 @@
     "build-nextjs": "GITBOOK_DIR=. gitbook build nextjs/source nextjs/html",
     "build-jest": "GITBOOK_DIR=. gitbook build jest/source jest/html",
     "build-mongodb": "GITBOOK_DIR=. gitbook build mongodb/source mongodb/html",
+    "build-crna": "GITBOOK_DIR=. gitbook build crna/source crna/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
