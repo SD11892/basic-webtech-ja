@@ -6,7 +6,7 @@ Expoは様々なラッパーAPIを提供しています。
 
 https://docs.expo.io/versions/v15.0.0/sdk/index.html
 
-## Accellerometer
+## Accelerometer
 
 下記のようなコンポーネント用意します。これをApp.jsに組み込みます。
 
