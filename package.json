@@ -14,6 +14,7 @@
     "build-mongodb": "GITBOOK_DIR=. gitbook build mongodb/source mongodb/html",
     "build-crna": "GITBOOK_DIR=. gitbook build crna/source crna/html",
     "build-flowtype": "GITBOOK_DIR=. gitbook build flowtype/source flowtype/html",
+    "build-reactql": "GITBOOK_DIR=. gitbook build reactql/source reactql/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
