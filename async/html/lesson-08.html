@@ -1,0 +1,356 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lesson 08: sequence · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="lesson-07.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lesson-01.html">
+            
+                <a href="lesson-01.html">
+            
+                    
+                    Lesson 01: async/awaitとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="lesson-02.html">
+            
+                <a href="lesson-02.html">
+            
+                    
+                    Lesson 02: 環境構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="lesson-03.html">
+            
+                <a href="lesson-03.html">
+            
+                    
+                    Lesson 03: callback/promise復習
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="lesson-04.html">
+            
+                <a href="lesson-04.html">
+            
+                    
+                    Lesson 04: async導入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="lesson-05.html">
+            
+                <a href="lesson-05.html">
+            
+                    
+                    Lesson 05: fetch利用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="lesson-06.html">
+            
+                <a href="lesson-06.html">
+            
+                    
+                    Lesson 06: Promise.all
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="lesson-07.html">
+            
+                <a href="lesson-07.html">
+            
+                    
+                    Lesson 07: Promise.race
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="lesson-08.html">
+            
+                <a href="lesson-08.html">
+            
+                    
+                    Lesson 08: sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Lesson 08: sequence</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sequence">sequence</h1>
+<p>Promise.all&#x306F;&#x4E26;&#x5217;&#x51E6;&#x7406;&#x3067;&#x3057;&#x305F;&#x304C;&#x3001;&#x9010;&#x6B21;&#x51E6;&#x7406;&#x3092;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3069;&#x3046;&#x3059;&#x308C;&#x3070;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x500B;&#x6570;&#x304C;&#x6C7A;&#x307E;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3059;&#x3079;&#x3066;&#x66F8;&#x304F;&#x65B9;&#x6CD5;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x53EF;&#x5909;&#x306E;&#x5834;&#x5408;&#x306F;&#x3046;&#x307E;&#x304F;&#x30EB;&#x30FC;&#x30D7;&#x3055;&#x305B;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#x30EA;&#x30F3;&#x30AF;&#xFF1A;
+<a href="http://stackoverflow.com/questions/24586110/resolve-promises-one-after-another-i-e-in-sequence" target="_blank">http://stackoverflow.com/questions/24586110/resolve-promises-one-after-another-i-e-in-sequence</a></p>
+<h2 id="promisesequence">Promise.sequence</h2>
+<pre><code>Promise.sequence = tasks =&gt; tasks.reduce(async (promise, task) =&gt; {
+  await promise;
+  return task();
+}, Promise.resolve());
+</code></pre><p>&#x306E;&#x3088;&#x3046;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x304A;&#x304F;&#x3068;&#x7C21;&#x5358;&#x306B;&#x4F7F;&#x3048;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x6C17;&#x3092;&#x3064;&#x3051;&#x308B;&#x3079;&#x304D;&#x306F;&#x3001;task&#x306F;promise&#x3092;&#x8FD4;&#x3059;&#x95A2;&#x6570;&#x3067;&#x306A;&#x3051;&#x308C;&#x3070;&#x3044;&#x3051;&#x306A;&#x3044;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;&#x4F8B;">&#x4F7F;&#x7528;&#x4F8B;</h2>
+<pre><code>const timer = async (timeout, result) =&gt; 
+  new Promise(resolve =&gt; setTimeout(() =&gt; {
+    console.log(&apos;done&apos;, { timeout, result });
+    resolve(result);
+  }, timeout));
+
+const main = async () =&gt; {
+  const arr = [&apos;mesg1&apos;, &apos;mesg2&apos;, &apos;mesg3&apos;];
+  const result = await Promise.sequence(arr.map(mesg =&gt; () =&gt; timer(1000, mesg)));
+  console.log(result);
+};
+</code></pre><h2 id="&#x8AB2;&#x984C;">&#x8AB2;&#x984C;</h2>
+<ol>
+<li>&#x4E0A;&#x8A18;&#x3092;&#x52D5;&#x4F5C;&#x3055;&#x305B;&#x308B;</li>
+<li>(&#x6311;&#x6226;) &#x9010;&#x6B21;&#x51E6;&#x7406;&#x3092;&#x3059;&#x308B;&#x3051;&#x308C;&#x3069;&#x7D50;&#x679C;&#x3092;&#x914D;&#x5217;&#x3067;&#x8FD4;&#x3059;&#x306B;&#x306F;&#x3069;&#x3046;&#x3059;&#x308B;&#x304B;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lesson-07.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Lesson 07: Promise.race">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lesson 08: sequence","level":"1.9","depth":1,"previous":{"title":"Lesson 07: Promise.race","level":"1.8","depth":1,"path":"lesson-07.md","ref":"lesson-07.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lesson-08.md","mtime":"2017-05-09T00:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-17T09:55:40.851Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
