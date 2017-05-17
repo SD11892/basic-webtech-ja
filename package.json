@@ -15,6 +15,7 @@
     "build-crna": "GITBOOK_DIR=. gitbook build crna/source crna/html",
     "build-flowtype": "GITBOOK_DIR=. gitbook build flowtype/source flowtype/html",
     "build-reactql": "GITBOOK_DIR=. gitbook build reactql/source reactql/html",
+    "build-async": "GITBOOK_DIR=. gitbook build async/source async/html",
     "gitbook": "GITBOOK_DIR=. gitbook"
   },
   "dependencies": {
