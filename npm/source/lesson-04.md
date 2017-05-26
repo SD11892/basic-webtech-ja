@@ -22,4 +22,4 @@
 
 ## 参考情報
 
-- https://docs.npmjs.com/files/package.json
+- https://docs.npmjs.com/files/package.json#dependencies
