@@ -38,9 +38,22 @@ $ npm run
 
 `npm start`を実行すると、`prestart`, `start`, `poststart`の順に実行されます。
 
+## npm scriptsからnpm scriptsの呼び出し
 
+npm scriptsは分割して書くとうまく書ける場合があります。
 
-
+```
+{
+  "scripts": {
+    "pretest": "npm run lint",
+    "lint": "eslint",
+    "test": "npm run test:unit && npm run test:api && npm run test:e2e",
+    "test:unit": "mocha ...",
+    "test:api": "frisby ...",
+    "test:e2e": "protoractor ..."
+  }
+}
+```
 
 ## 参考情報
 
