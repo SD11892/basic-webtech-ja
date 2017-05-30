@@ -7,5 +7,5 @@
 * [Lesson 04: dependenciesの書き方](lesson-04.md)
 * [Lesson 05: scriptsの書き方](lesson-05.md)
 * [Lesson 06: shelljs/shx](lesson-06.md)
-* [Lesson 07: npm-run-all/wait-on](lesson-07.md)
-* [Lesson 08: package.jsonのその他項目](lesson-08.md)
+* [Lesson 07: npm-run-all](lesson-07.md)
+* [Lesson 08: wait-on](lesson-08.md)
