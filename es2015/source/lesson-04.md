@@ -28,17 +28,17 @@ const f = () => {
 const f1 = function() {
   this.counter = 0;
   const g = function() { this.counter = 1; };
-  const obj = { func: g };
-  obj.func();
-  console.log(this.counter);
+  const obj = { func: g, counter: 100 };
+  obj.func(); // g.call(obj);
+  console.log(this.counter, obj.counter);
 };
 
 const f2 = function() {
   this.counter = 0;
   const g = () => { this.counter = 1; };
-  const obj = { func: g };
-  obj.func();
-  console.log(this.counter);
+  const obj = { func: g, counter: 100 };
+  obj.func(); // g.call(obj);
+  console.log(this.counter, obj.counter);
 };
 ```
 
