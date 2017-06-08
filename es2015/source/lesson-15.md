@@ -72,8 +72,8 @@ const sum = arr => arr.reduce((x, p) => p + x, 0);
 末尾再帰で書くと、例えば、次のようになります。
 
 ```
-const sum = ([num, ...rest], result=0) =>
-  rest.length === 0 ? result + (num || 0) : sum(rest, result + num);
+const sum = ([num=0, ...rest], result=0) =>
+  rest.length === 0 ? result + num : sum(rest, result + num);
 ```
 
 他にも様々な例がありえます。

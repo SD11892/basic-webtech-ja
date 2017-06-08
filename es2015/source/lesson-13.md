@@ -69,7 +69,7 @@ Promise.resolve, Promise.reject
 ## 課題
 
 1. 基本的な動作を確認する
-2. MongoDB node.js driverを使って動作を確認する
+2. (挑戦) MongoDB node.js driverを使って動作を確認する
 
 ## 参考情報
 
