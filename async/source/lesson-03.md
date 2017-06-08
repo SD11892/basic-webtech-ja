@@ -21,6 +21,9 @@ const main = () => {
     }
   });
 };
+
+console.log('START');
+main();
 ```
 
 ## promise
@@ -44,6 +47,9 @@ const main = () => {
     console.error(err);
   });
 };
+
+console.log('START');
+main();
 ```
 
 ## 課題
