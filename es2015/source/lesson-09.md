@@ -13,7 +13,7 @@ const g = (a, b, c = {}) => { console.log(a, b, c); };
 引数を省略できます。
 
 ```
-const func = (a, b, ...c) = > { console.log(a, b, c); };
+const func = (a, b, ...c) => { console.log(a, b, c); };
 func(1, 2, 3, 4, 5);
 ```
 
